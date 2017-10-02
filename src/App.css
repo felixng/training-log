@@ -1,0 +1,115 @@
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hexagon {
+  text-align: left;
+  position: relative;
+  width: 40px; 
+  height: 23.09px;
+  /*background-color: #f5f5f5;*/
+  background-color: #C5C5C5;
+  /*margin: 11.55px 0;*/
+  margin: 16.55px 5px;
+  display: inline-block;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+}
+
+.hexagon:before {
+  bottom: 100%;
+  /*border-bottom: 11.55px solid #f5f5f5;*/
+  border-bottom: 11.55px solid #C5C5C5;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  /*border-top: 11.55px solid #f5f5f5;*/
+  border-top: 11.55px solid #C5C5C5;
+}
+
+.instagram-frame {
+  border-style: solid;
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 20%;
+  background: #000000;
+}
+
+.schedule {
+  height: 40%;
+  width: 100%;
+  overflow: auto; 
+}
+
+.week {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.week p{
+  color: #c9c9c9;
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: 0.2em;
+  width: calc(100%/7);
+}
+
+.buttons {
+  margin: 0 10px;
+  column-count: 7;
+  column-rule: 1px dotted #ddd;
+  /*display: flex;  
+  flex-direction: row;
+  flex-wrap: wrap;*/
+}
+
+.legends {
+  height: 20%;
+  background: #f2f2f2;
+}
+
+.stats {
+  height: 20%;
+  background: #3d3d3b;
+}
