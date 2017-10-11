@@ -1,4 +1,22 @@
+@font-face {
+  font-family: 'IdealSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('IdealSans'), url(./fonts/IdealSans-Book.otf);
+}
+
+@font-face {
+  font-family: 'IdealSansLight';
+  src: local('IdealSans'), url(./fonts/IdealSans-Light.otf);
+}
+
+@font-face {
+  font-family: 'IdealSansExtraLight';
+  src: local('IdealSans'), url(./fonts/IdealSans-ExtraLight.otf);
+}
+
 .App {
+  font-family: 'IdealSansLight';
   text-align: center;
   position: relative;
 }
