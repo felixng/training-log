@@ -7,7 +7,7 @@ class HexagonButton extends Component {
   }
 
   Toggle(){
-    var colorIndex = (this.state.color == 7) ? 0 : this.state.color + 1;
+    var colorIndex = (this.state.color === 7) ? 0 : this.state.color + 1;
   	this.setState({ color: colorIndex });
   }
 

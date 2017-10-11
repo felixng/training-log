@@ -1,8 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { makeMainRoutes } from './routes';
+const routes = makeMainRoutes();
 
 var style = document.createElement('style');
 style.type = 'text/css';
@@ -26,5 +26,5 @@ style.innerHTML =  `.color-1 {background-color: #DAF7A6;}
 
 document.getElementsByTagName('head')[0].appendChild(style);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(routes, document.getElementById('root'));
 registerServiceWorker();
