@@ -10,14 +10,17 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">InstaProgress</h1>
         </header>
         <p className="App-intro">
         </p>
         <Frame>
         </Frame>
         <footer className="footer">
-          Testing
+          Link
+          Link
+          Link
+          Link
         </footer>
       </div>
     );

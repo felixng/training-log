@@ -54,9 +54,8 @@
   content: "";
   position: absolute;
   width: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-
+  border-left: 20px solid transparent !important;
+  border-right: 20px solid transparent !important;
 }
 
 .hexagon:before {
