@@ -7,10 +7,12 @@ import StatsBar from './StatsBar';
 class Frame extends Component {
   render() {
   	return (<div className="instagram-frame">
-  				<Header />
-            	<Schedule sessionCount={3} />
-            	<Legends />
-            	<StatsBar />
+  				<div className="content">
+	  				<Header />
+	            	<Schedule sessionCount={3} />
+	            	<Legends />
+	            	<StatsBar />
+	            </div>
 			</div>);
   }
 }

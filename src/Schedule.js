@@ -6,7 +6,7 @@ class Schedule extends Component {
   	let buttons = [];
 
   	for (var i = 0; i < this.props.sessionCount * 7; i++){
-  		buttons.push(<HexagonButton colour='#000'/>)
+  		buttons.push(<HexagonButton key={`hex-${i}`} colour='#000'/>)
   	}
 
   	return (<div className="schedule">

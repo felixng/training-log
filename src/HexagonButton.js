@@ -14,10 +14,13 @@ class HexagonButton extends Component {
   render() {
     var color = 'color-' + this.state.color;
 
-  	return (<div ref={"button"}
-				 className={`hexagon ${color}`}
-				 onClick={this.Toggle.bind(this)}>
-  		    </div>);
+  	return (<div className="hexContainer" onClick={this.Toggle.bind(this)}>
+              <div ref={"button"}
+      				 className={`hexagon ${color}`}>
+                  <div className="hexagon-overlay">
+                  </div>
+        		    </div>
+            </div>);
   }
 }
 

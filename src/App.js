@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import { Navbar, Button } from 'react-bootstrap';
+import logo from './logo.png';
+import { Button } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -21,16 +21,15 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar fluid>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="#">Auth0 - React</a>
-              </Navbar.Brand>
-              <Button
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">InstaProgress</h1>
+          <Button
                 bsStyle="primary"
                 className="btn-margin"
                 onClick={this.goTo.bind(this, 'home')}
               >
+               Home
               </Button>
               {
                 !isAuthenticated() && (
@@ -65,11 +64,6 @@ class App extends Component {
                     </Button>
                   )
               }
-            </Navbar.Header>
-          </Navbar>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">InstaProgress</h1>
         </header>
         <p className="App-intro">
           {this.props.children}
