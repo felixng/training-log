@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Frame from '../Frame';
+import Frame from '../Components/Frame';
 
 class Home extends Component {
   login() {

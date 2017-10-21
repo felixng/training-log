@@ -150,7 +150,7 @@
 .schedule {
   height: 40%;
   width: 100%;
-  overflow: auto; 
+  overflow: hidden; 
 }
 
 .week {

@@ -10,19 +10,19 @@ class Schedule extends Component {
   	}
 
   	return (<div className="schedule">
-  				<div className="week">
-            <p>M</p>
-            <p>T</p>
-            <p>W</p>
-            <p>Th</p>
-            <p>F</p>
-            <p>Sa</p>
-            <p>Su</p>
-          </div>
-          <div className="buttons">
-  					{buttons}
-  				</div>
-			</div>);
+        				<div className="week">
+                  <p>M</p>
+                  <p>T</p>
+                  <p>W</p>
+                  <p>Th</p>
+                  <p>F</p>
+                  <p>Sa</p>
+                  <p>Su</p>
+                </div>
+                <div className="buttons">
+        					{buttons}
+        				</div>
+      			</div>);
   }
 }
 
