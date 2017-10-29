@@ -1,5 +1,8 @@
 html, body, #root {
-  position: absolute; width: 100% !important; height: 100% !important;
+  position: absolute; 
+  width: 100% !important; 
+  height: 100% !important;
+  background-color: #ffffff;
 }
 
 @font-face {
@@ -64,6 +67,7 @@ html, body, #root {
 
 .btn-margin{
   font-family: 'IdealSans';
+  outline:none;
   text-decoration: none;
   display: inline-block;
   color: white;

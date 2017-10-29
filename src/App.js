@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
+import * as html2canvas from 'html2canvas';
 import { Link } from 'react-router-dom';
 import './App.css';
 import domtoimage from 'dom-to-image';
 import ReactDOM from 'react-dom';
+import svg2img from 'node-svg2img';
+import FileSaver from 'file-saver';
 
 class App extends Component {
   goTo(route) {
@@ -18,15 +21,62 @@ class App extends Component {
     this.props.auth.logout();
   }
 
+  html() {
+    html2canvas(document.body, {
+      onrendered: function(canvas) {
+        var dataUrl = canvas.toDataURL();
+        var link = document.createElement('a');
+            link.download = 'my-image-name.jpeg';
+            link.href = dataUrl;
+            link.click();
+        // document.body.appendChild(canvas);
+      },
+      width: 300,
+      height: 300
+    });
+  }
+
   toPNG() {
     // var node = ReactDOM.findDOMNode(this.refs.root);
-    var node = document.getElementById("app");
+    var node = document.body;
 
-    domtoimage.toPng(node)
+    domtoimage.toPng(node, { quality: 0.1 })
         .then(function (dataUrl) {
-            var img = new Image();
-            img.src = dataUrl;
-            document.body.appendChild(img);
+            var link = document.createElement('a');
+            link.download = 'my-image-name.png';
+            link.href = dataUrl;
+            link.click();
+        })
+        .catch(function (error) {
+            console.error('oops, something went wrong!', error);
+        });
+
+  }
+
+  toBlob() {
+    // var node = ReactDOM.findDOMNode(this.refs.root);
+    var node = document.body;
+
+    domtoimage.toBlob(node, { quality: 0.2 })
+            .then(function (blob) {
+                FileSaver.saveAs(blob, 'my-node.jpg');
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+  }
+
+  toSVG() {
+    // var node = ReactDOM.findDOMNode(this.refs.root);
+    var node = document.body;
+
+    domtoimage.toSvg(node, { quality: 0.1 })
+        .then(function (dataUrl) {
+            var link = document.createElement('a');
+            link.download = 'my-image-name.svg';
+            link.href = dataUrl;
+            console.log(dataUrl);
+            link.click();
         })
         .catch(function (error) {
             console.error('oops, something went wrong!', error);
@@ -68,7 +118,7 @@ class App extends Component {
             isAuthenticated() && (
                 <Link to="/"
                   className="btn-margin"
-                  onClick={this.toPNG.bind(this)}>
+                  onClick={this.toBlob.bind(this)}>
                   Image
                 </Link>
               )
