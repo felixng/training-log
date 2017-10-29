@@ -11,9 +11,7 @@ class Home extends Component {
       <div className="container">
         {
           isAuthenticated() && (
-              <h4>
-                <Frame />
-              </h4>
+              <Frame />
             )
         }
         {

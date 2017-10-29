@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 @font-face {
   font-family: 'IdealSans';
   font-style: normal;
@@ -19,22 +24,44 @@
   font-family: 'IdealSansLight';
   text-align: center;
   position: relative;
+  height: 100%;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 40px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  position: relative;
+  background-image: url(http://www.wilsonben.co.uk/wp-content/uploads/2016/03/Website-Header-01.png);
+  background-position: center bottom;
+  display: block;
+  height: 200px;
+  padding: 1em 2em;
   color: white;
 }
 
 .App-title {
+  position: absolute;
+  top: 10;
+  left: 10;
   font-size: 1.5em;
+}
+
+.App-Nav{
+  float: right;
+}
+
+.btn-margin{
+  font-family: 'IdealSansExtraLight';
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  letter-spacing: 1.5px;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: 100;
 }
 
 .App-intro {
@@ -50,7 +77,6 @@
   background-color: #222;
   height: 150px;
   padding: 20px;
-  margin-top: 20px;
   color: white;
 }
 
@@ -123,17 +149,19 @@
 .instagram-frame {
   position: relative;
   border-style: dotted;
-  border-width: 0.5px;
+  border-width: 0px; /* disabled frame border */
   border-color: #C1C1C1;
-  width: 90%;
-  margin: 2em auto;
+  width: 100%;
+  height: 360px;
+  margin: 0 auto;
   max-width: 600px;
+  max-height: 360px;
 }
 
 .instagram-frame:after {
-  content: "";
+  /*content: "";
   display: block;
-  padding-bottom: 100%;
+  padding-bottom: 100%;*/
 }
 
 .content {
@@ -148,7 +176,7 @@
 }
 
 .schedule {
-  height: 40%;
+  height: 66.67%;
   width: 100%;
   overflow: hidden; 
 }
@@ -177,7 +205,7 @@
 }
 
 .legends {
-  height: 20%;
+  height: 33.33%;
   background: #f2f2f2;
 }
 

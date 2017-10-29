@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -20,62 +20,44 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-      <div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Happy Birthday! (This is work in progress...)</h1>
-          <Button
-                bsStyle="primary"
-                className="btn-margin"
-                onClick={this.goTo.bind(this, 'home')}
-              >
-               Home
-              </Button>
-              {
-                !isAuthenticated() && (
-                    <Button
-                      bsStyle="primary"
-                      className="btn-margin"
-                      onClick={this.login.bind(this)}
-                    >
-                      Log In
-                    </Button>
-                  )
-              }
-              {
-                isAuthenticated() && (
-                    <Button
-                      bsStyle="primary"
-                      className="btn-margin"
-                      onClick={this.goTo.bind(this, 'profile')}
-                    >
-                      Profile
-                    </Button>
-                  )
-              }
-              {
-                isAuthenticated() && (
-                    <Button
-                      bsStyle="primary"
-                      className="btn-margin"
-                      onClick={this.logout.bind(this)}
-                    >
-                      Log Out
-                    </Button>
-                  )
-              }
-        </header>
-        <p className="App-intro">
-          {this.props.children}
-        </p>
-      {/*TODO: Fix why children come after footer*/}
-        {/*<footer className="footer">
-          Link
-          Link
-          Link
-          Link
-        </footer>*/}
-      </div>
+      <header className="App-header">
+        <h1 className="App-title">Jazzy Panda</h1>
+        <div className="App-Nav">
+          <Link to="/home" 
+            activeClassName="active"
+            className="btn-margin"
+            onClick={this.goTo.bind(this, 'home')}>
+           Home
+          </Link>
+          {
+            !isAuthenticated() && (
+                <Link to="/"
+                  className="btn-margin"
+                  onClick={this.login.bind(this)}>
+                  Log In
+                </Link>
+              )
+          }
+          {
+            isAuthenticated() && (
+                <Link to="/profile"
+                  className="btn-margin"
+                  onClick={this.goTo.bind(this, 'profile')}>
+                  Profile
+                </Link>
+              )
+          }
+          {
+            isAuthenticated() && (
+                <Link to="/"
+                  className="btn-margin"
+                  onClick={this.logout.bind(this)}>
+                  Log Out
+                </Link>
+              )
+          }
+        </div>
+      </header>
     );
   }
 }

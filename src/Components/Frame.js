@@ -8,10 +8,8 @@ class Frame extends Component {
   render() {
   	return (<div className="instagram-frame">
   				<div className="content">
-	  				<Header />
 	            	<Schedule sessionCount={3} />
 	            	<Legends />
-	            	<StatsBar />
 	            </div>
 			</div>);
   }
