@@ -19,7 +19,7 @@ class Footer extends Component {
                   <div className="heading">
                     X
                   </div>
-                  <div className="sub-heading">
+                  <div className="sub-heading super">
                     +/- from last week
                   </div>
                 </div>
