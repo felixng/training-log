@@ -42,7 +42,8 @@ html, body, #root {
 
 .App-header {
   position: relative;
-  background-image: url(http://www.wilsonben.co.uk/wp-content/uploads/2016/03/Website-Header-01.png);
+  background-image: url(header.png);
+  /*background: #000;*/
   background-position: center bottom;
   display: block;
   height: 20%;

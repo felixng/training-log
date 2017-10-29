@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.png';
 import { Link } from 'react-router-dom';
 import './App.css';
+import domtoimage from 'dom-to-image';
+import ReactDOM from 'react-dom';
 
 class App extends Component {
   goTo(route) {
@@ -16,11 +18,27 @@ class App extends Component {
     this.props.auth.logout();
   }
 
+  toPNG() {
+    // var node = ReactDOM.findDOMNode(this.refs.root);
+    var node = document.getElementById("app");
+
+    domtoimage.toPng(node)
+        .then(function (dataUrl) {
+            var img = new Image();
+            img.src = dataUrl;
+            document.body.appendChild(img);
+        })
+        .catch(function (error) {
+            console.error('oops, something went wrong!', error);
+        });
+
+  }
+
   render() {
     const { isAuthenticated } = this.props.auth;
 
     return (
-      <header className="App-header">
+      <header className="App-header" ref="root">
         <h1 className="App-title">Jazzy Panda</h1>
         <div className="App-Nav">
           <Link to="/home" 
@@ -43,6 +61,15 @@ class App extends Component {
                   className="btn-margin"
                   onClick={this.goTo.bind(this, 'profile')}>
                   Profile
+                </Link>
+              )
+          }
+          {
+            isAuthenticated() && (
+                <Link to="/"
+                  className="btn-margin"
+                  onClick={this.toPNG.bind(this)}>
+                  Image
                 </Link>
               )
           }
