@@ -16,7 +16,7 @@ class Home extends Component {
         }
         {
           !isAuthenticated() && (
-              <h4>
+              <div>
                 You are not logged in! Please{' '}
                 <a
                   style={{ cursor: 'pointer' }}
@@ -25,7 +25,7 @@ class Home extends Component {
                   Log In
                 </a>
                 {' '}to continue.
-              </h4>
+              </div>
             )
         }
       </div>

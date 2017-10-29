@@ -24,7 +24,6 @@ class App extends Component {
         <h1 className="App-title">Jazzy Panda</h1>
         <div className="App-Nav">
           <Link to="/home" 
-            activeClassName="active"
             className="btn-margin"
             onClick={this.goTo.bind(this, 'home')}>
            Home

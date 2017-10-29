@@ -1,6 +1,5 @@
-html, body {
-  height: 100%;
-  width: 100%;
+html, body, #root {
+  position: absolute; width: 100% !important; height: 100% !important;
 }
 
 @font-face {
@@ -37,7 +36,7 @@ html, body {
   background-image: url(http://www.wilsonben.co.uk/wp-content/uploads/2016/03/Website-Header-01.png);
   background-position: center bottom;
   display: block;
-  height: 200px;
+  height: 20%;
   padding: 1em 2em;
   color: white;
 }
@@ -73,9 +72,13 @@ html, body {
   to { transform: rotate(360deg); }
 }
 
+.container {
+  height: 50%;
+}
+
 .footer {
   background-color: #222;
-  height: 150px;
+  height: 20%;
   padding: 20px;
   color: white;
 }
