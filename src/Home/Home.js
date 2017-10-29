@@ -16,15 +16,18 @@ class Home extends Component {
         }
         {
           !isAuthenticated() && (
-              <div>
-                You are not logged in! Please{' '}
-                <a
-                  style={{ cursor: 'pointer' }}
-                  onClick={this.login.bind(this)}
-                >
-                  Log In
-                </a>
-                {' '}to continue.
+              <div className="guest-content">
+                <div>
+                  You are not logged in! Please{' '}
+                  <a
+                    style={{ cursor: 'pointer' }}
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </a>
+                  {' '}to continue.
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EykWcFEtFqo" frameborder="0" allowfullscreen></iframe>
               </div>
             )
         }

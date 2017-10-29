@@ -72,8 +72,12 @@ html, body, #root {
   to { transform: rotate(360deg); }
 }
 
+.guest-content {
+  padding: 1em 0;
+}
+
 .container {
-  height: 50%;
+  min-height: 50%;
 }
 
 .footer {
