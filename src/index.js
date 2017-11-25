@@ -2,8 +2,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { makeMainRoutes } from './routes';
+
 const routes = makeMainRoutes();
-require('dotenv').config();
+
 
 var style = document.createElement('style');
 style.type = 'text/css';
