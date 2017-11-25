@@ -3,10 +3,11 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { makeMainRoutes } from './routes';
 const routes = makeMainRoutes();
+require('dotenv').config();
 
 var style = document.createElement('style');
 style.type = 'text/css';
-style.innerHTML =  `.color-1 {background-color: #DAF7A6;}
+style.innerHTML = `.color-1 {background-color: #DAF7A6;}
 					.color-1:after, .color-1:before {border-color: #DAF7A6;}
 
 					.color-2 {background-color: #FFC300;}

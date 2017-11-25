@@ -9,42 +9,23 @@ class Footer extends Component {
 
     return (
       <footer className="footer">
-        {
-          isAuthenticated() && (
-              <div className="instagram-footer">
-                <div className="totalSessions">
-                  <div className="sub-heading">
-                    Total sessions
-                  </div>
-                  <div className="heading">
-                    X
-                  </div>
-                  <div className="sub-heading super">
-                    +/- from last week
-                  </div>
-                </div>
-                <div className="weeklyActivity">
-                  <div className="sub-heading">
-                    Weekly activity
-                  </div>
-                  <div className="heading">
-                    XX% active
-                  </div>
-                </div>
-              </div>
-            )
-        }
-        {
-          !isAuthenticated() && (
-              <div className="footer">
-                Link
-                Link
-                Link
-                Link
-              </div>
-            )
-        }
-        </footer>
+        {isAuthenticated() && (
+          <div className="instagram-footer">
+            <div className="totalSessions">
+              <div className="sub-heading">Total sessions</div>
+              <div className="heading">X</div>
+              <div className="sub-heading super">+/- from last week</div>
+            </div>
+            <div className="weeklyActivity">
+              <div className="sub-heading">Weekly activity</div>
+              <div className="heading">XX% active</div>
+            </div>
+          </div>
+        )}
+        {!isAuthenticated() && (
+          <div className="footer">Link Link Link Link</div>
+        )}
+      </footer>
     );
   }
 }

@@ -5,7 +5,7 @@ import './App.css';
 
 class App extends Component {
   goTo(route) {
-    this.props.history.replace(`/${route}`)
+    this.props.history.replace(`/${route}`);
   }
 
   login() {
@@ -23,38 +23,36 @@ class App extends Component {
       <header className="App-header">
         <h1 className="App-title">Jazzy Panda</h1>
         <div className="App-Nav">
-          <Link to="/home" 
+          <Link
+            to="/home"
             className="btn-margin"
-            onClick={this.goTo.bind(this, 'home')}>
-           Home
+            onClick={this.goTo.bind(this, 'home')}
+          >
+            Home
           </Link>
-          {
-            !isAuthenticated() && (
-                <Link to="/"
-                  className="btn-margin"
-                  onClick={this.login.bind(this)}>
-                  Log In
-                </Link>
-              )
-          }
-          {
-            isAuthenticated() && (
-                <Link to="/profile"
-                  className="btn-margin"
-                  onClick={this.goTo.bind(this, 'profile')}>
-                  Profile
-                </Link>
-              )
-          }
-          {
-            isAuthenticated() && (
-                <Link to="/"
-                  className="btn-margin"
-                  onClick={this.logout.bind(this)}>
-                  Log Out
-                </Link>
-              )
-          }
+          {!isAuthenticated() && (
+            <Link to="/" className="btn-margin" onClick={this.login.bind(this)}>
+              Log In
+            </Link>
+          )}
+          {isAuthenticated() && (
+            <Link
+              to="/profile"
+              className="btn-margin"
+              onClick={this.goTo.bind(this, 'profile')}
+            >
+              Profile
+            </Link>
+          )}
+          {isAuthenticated() && (
+            <Link
+              to="/"
+              className="btn-margin"
+              onClick={this.logout.bind(this)}
+            >
+              Log Out
+            </Link>
+          )}
         </div>
       </header>
     );
