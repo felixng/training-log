@@ -100,8 +100,8 @@ html, body, #root {
 .hexContainer {
   position:relative;
   list-style-type:none;
-  width: 55%; 
-  padding-bottom: calc(55% / 0.866); /* =  width /0.866 */
+  width: 70%; 
+  padding-bottom: calc(70% / 0.866); /* =  width /0.866 */
   overflow:hidden;
   display: inline-block;
   margin-bottom: 13%;
@@ -167,10 +167,9 @@ html, body, #root {
 }
 
 .schedule {
-  width: 100%;
-  margin: 1% 1.5%;
   column-count: 7;
   column-rule: 1px dotted #ddd;
+  padding: 1% 1.5%;
 }
 
 .column {
@@ -237,7 +236,6 @@ html, body, #root {
 
 .weeklyActivity{
   text-align: left;
-  display: inline-block;
   float: right;
   margin-right: 1em;
 }
