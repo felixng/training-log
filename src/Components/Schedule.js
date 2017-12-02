@@ -13,7 +13,7 @@ class Schedule extends Component {
     }
 
     for (var i = 0; i < headers.length; i ++){
-      columns.push(<ButtonsColumn header={headers[i]} buttonCount={this.props.sessionCount} />)
+      columns.push(<ButtonsColumn key={`header-${i}`} header={headers[i]} buttonCount={this.props.sessionCount} />)
     }
 
     return columns;

@@ -27,7 +27,7 @@ class Home extends Component {
                   </a>
                   {' '}to continue.
                 </div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/EykWcFEtFqo" frameBorder="0" allowFullScreen></iframe>
+                <iframe title='Indroduction Video by Jazzy Panda' width="560" height="315" src="https://www.youtube.com/embed/EykWcFEtFqo" frameBorder="0" allowFullScreen></iframe>
               </div>
             )
         }
