@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
-import HexagonButton from './HexagonButton';
+import ButtonsColumn from './ButtonsColumn';
+
+
 
 class Schedule extends Component {
   render() {
-  	let buttons = [];
+    let columns = [];
+    var headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
-  	for (var i = 0; i < this.props.sessionCount * 7; i++){
-  		buttons.push(<HexagonButton key={`hex-${i}`} colour='#000'/>)
-  	}
+    if (this.props.startFromSunday){
+      headers = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    }
+
+    for (var i = 0; i < headers.length; i ++){
+      columns.push(<ButtonsColumn header={headers[i]} buttonCount={this.props.sessionCount} />)
+    }
 
   	return (<div className="schedule">
-        				<div className="week">
-                  <p>M</p>
-                  <p>T</p>
-                  <p>W</p>
-                  <p>Th</p>
-                  <p>F</p>
-                  <p>Sa</p>
-                  <p>Su</p>
-                </div>
-                <div className="buttons">
-        					{buttons}
-        				</div>
+              {columns}
       			</div>);
   }
 }

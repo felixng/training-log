@@ -8,7 +8,7 @@ class Frame extends Component {
   render() {
   	return (<div className="instagram-frame">
   				<div className="content">
-	            	<Schedule sessionCount={3} />
+	            	<Schedule startFromSunday={false} sessionCount={3} />
 	            	<Legends />
 	            </div>
 			</div>);

@@ -167,30 +167,36 @@ html, body, #root {
 
 .schedule {
   width: 100%;
+  margin: 1% 1.5%;
+  column-count: 7;
+  column-rule: 1px dotted #ddd;
 }
 
-.week {
+.column {
+  height: 100%;
+}
+
+.column .colomn-header {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.week p{
+.column .column-header p{
   color: #c1c1c1;
   display: inline-block;
   font-size: 1.5em;
   line-height: 0.2em;
-  width: calc(100%/7);
 }
 
-.buttons {
+/*.buttons {
   margin: 1% 1.5%;
   column-count: 7;
   column-rule: 1px dotted #ddd;
   /*display: flex;  
   flex-direction: row;
-  flex-wrap: wrap;*/
-}
+  flex-wrap: wrap;
+} */
 
 .legends {
   height: calc(360px * 0.3333);
@@ -209,7 +215,6 @@ html, body, #root {
 }
 
 .totalSessions{
-  display: inline-block;
   float: left;
   text-align: left;
   margin-left: 1em;
