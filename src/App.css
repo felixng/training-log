@@ -111,6 +111,8 @@ html, body, #root {
   -webkit-transform: rotate(-60deg) skewY(30deg);
   -ms-transform: rotate(-60deg) skewY(30deg);
   transform: rotate(-60deg) skewY(30deg);
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .hexagon {
