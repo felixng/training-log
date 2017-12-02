@@ -4,7 +4,7 @@ import ButtonsColumn from './ButtonsColumn';
 
 
 class Schedule extends Component {
-  render() {
+  getColumns(){
     let columns = [];
     var headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
@@ -16,8 +16,12 @@ class Schedule extends Component {
       columns.push(<ButtonsColumn header={headers[i]} buttonCount={this.props.sessionCount} />)
     }
 
+    return columns;
+  }
+
+  render() {
   	return (<div className="schedule">
-              {columns}
+              {this.getColumns()}
       			</div>);
   }
 }
