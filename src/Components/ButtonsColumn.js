@@ -3,7 +3,7 @@ import HexagonButton from './HexagonButton';
 
 class ButtonsColumn extends Component {
   render() {
-  	let buttons = [];
+    const buttons = [];
 
   	for (var i = 0; i < this.props.buttonCount; i++){
   		buttons.push(<HexagonButton key={`hex-${i}`} colour='#000'/>)

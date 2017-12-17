@@ -5,16 +5,16 @@ import ButtonsColumn from './ButtonsColumn';
 
 class Schedule extends Component {
   getColumns(){
-    let columns = [];
+    const columns = [];
     var headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
     if (this.props.startFromSunday){
       headers = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
     }
-
-    for (var i = 0; i < headers.length; i ++){
-      columns.push(<ButtonsColumn key={`header-${i}`} header={headers[i]} buttonCount={this.props.sessionCount} />)
-    }
+    
+    headers.forEach((header, index) => {
+      columns.push(<ButtonsColumn key={`header-${index}`} header={header} buttonCount={this.props.sessionCount} />)
+    });
 
     return columns;
   }
