@@ -6,21 +6,36 @@ class Home extends Component {
     this.props.auth.login();
   }
   render() {
-    const WEEKLY_DATA = [
-      {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-      {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-      {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-      {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-      {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-      {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-    ];    
+    const WEEKLY_DATA = {
+      'Monday': {
+        'sessions': [null, null, null]
+      },
+      'Tuesday': {
+        'sessions': [null, null, null]
+      },
+      'Wednesday': {
+        'sessions': [null, null, null]
+      },
+      'Thursday': {
+        'sessions': [null, null, null]
+      },
+      'Friday': {
+        'sessions': [null, null, null]
+      },
+      'Saturday': {
+        'sessions': [null, null, null]
+      },
+      'Sunday': {
+        'sessions': [null, null, null]
+      }
+    };
 
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="container">
         {
           isAuthenticated() && (
-              <Frame />
+              <Frame data={WEEKLY_DATA} />
             )
         }
         {

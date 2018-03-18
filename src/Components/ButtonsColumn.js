@@ -4,10 +4,11 @@ import HexagonButton from './HexagonButton';
 class ButtonsColumn extends Component {
   render() {
     const buttons = [];
+    var buttonData = this.props.data;
 
-  	for (var i = 0; i < this.props.buttonCount; i++){
-  		buttons.push(<HexagonButton key={`hex-${i}`} colour='#000'/>)
-  	}
+    buttonData.sessions.map((value, index) => {
+        buttons.push(<HexagonButton key={`hex-${index}`} activity={value} />)
+    });
 
   	return (<div className="column">
                 <div className="column-header">

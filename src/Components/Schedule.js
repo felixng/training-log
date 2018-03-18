@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import ButtonsColumn from './ButtonsColumn';
 
-
-
 class Schedule extends Component {
-  getColumns(){
+  getColumns(data){
     const columns = [];
-    var headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+    // var headers = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
-    if (this.props.startFromSunday){
-      headers = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-    }
-    
-    headers.forEach((header, index) => {
-      columns.push(<ButtonsColumn key={`header-${index}`} header={header} buttonCount={this.props.sessionCount} />)
+    // if (this.props.startFromSunday){
+    //   headers = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    // }
+
+    console.log(data);
+
+    Object.keys(data).map((key) => {
+      columns.push(<ButtonsColumn key={`header-${key}`} header={key[0]} data={data[key]} />)
     });
 
     return columns;
@@ -21,7 +21,7 @@ class Schedule extends Component {
 
   render() {
   	return (<div className="schedule">
-              {this.getColumns()}
+              {this.getColumns(this.props.data)}
       			</div>);
   }
 }
