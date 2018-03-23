@@ -7,18 +7,18 @@ class ButtonsColumn extends Component {
     var buttonData = this.props.data;
 
     buttonData.sessions.map((value, index) => {
-        buttons.push(<HexagonButton key={`hex-${index}`} activity={value} />)
+      buttons.push(<HexagonButton key={`hex-${index}`} colourIndex={value} />);
     });
 
-  	return (<div className="column">
-                <div className="column-header">
-                    <p>{this.props.header}</p>
-                </div>
-                <div className="buttons">
-                    {buttons}
-                </div>
-            </div>);
+    return (
+      <div className="column">
+        <div className="column-header">
+          <p>{this.props.header}</p>
+        </div>
+        <div className="buttons">{buttons}</div>
+      </div>
+    );
   }
 }
 
-export default ButtonsColumn; 
+export default ButtonsColumn;

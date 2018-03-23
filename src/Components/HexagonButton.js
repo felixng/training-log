@@ -6,23 +6,27 @@ class HexagonButton extends Component {
     this.state = { color: 0 };
   }
 
-  Toggle(){
-    var colorIndex = (this.state.color === 7) ? 0 : this.state.color + 1;
-  	this.setState({ color: colorIndex });
+  Toggle() {
+    var colorIndex = this.state.color === 7 ? 0 : this.state.color + 1;
+    this.setState({ color: colorIndex });
+  }
+
+  componentDidMount() {
+    this.setState({ color: this.props.colourIndex });
   }
 
   render() {
     var color = 'color-' + this.state.color;
-    var activity = this.props.activity;
+    var index = this.props.colourIndex;
 
-  	return (<div className="hexContainer" onClick={this.Toggle.bind(this)}>
-              <div ref={"button"}
-      				 className={`hexagon ${color} ${activity}`}>
-                  <div className="hexagon-overlay">
-                  </div>
-        		    </div>
-            </div>);
+    return (
+      <div className="hexContainer" onClick={this.Toggle.bind(this)}>
+        <div ref={'button'} className={`hexagon ${color} ${index}`}>
+          <div className="hexagon-overlay" />
+        </div>
+      </div>
+    );
   }
 }
 
-export default HexagonButton; 
+export default HexagonButton;
